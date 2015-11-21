@@ -1,0 +1,18 @@
+==================================
+Once you have Spark installed, install RStudio from https://www.rstudio.com/products/rstudio/download/.
+
+Open RStudio and run the following command, changing the filepath to match where your spark is installed: 
+
+Sys.setenv(SPARK_HOME="/Users/tylersimko/Documents/dev/Spark/spark-1.5.2-bin-hadoop2.6/")
+
+Then run: 
+
+.libPaths(c(file.path(Sys.getenv("SPARK_HOME"), "R", "lib"), .libPaths()))
+
+Then load the library and you should be good to go: 
+
+library(SparkR)
+
+Setup a Spark Context using: 
+
+sc <- sparkR.init(master="local")
