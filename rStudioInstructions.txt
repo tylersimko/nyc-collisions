@@ -1,11 +1,13 @@
 ==================================
 Once you have Spark installed, install RStudio from https://www.rstudio.com/products/rstudio/download/.
 
-Open RStudio and run the following command, changing the filepath to match where your spark is installed: 
+Open RStudio and run the following commands: 
 
+library(devtools)
+install_github("amplab-extras/SparkR-pkg", subdir="pkg")
+
+Then run these, making sure to change the path to where your Spark is saved: 
 Sys.setenv(SPARK_HOME="/Users/tylersimko/Documents/dev/Spark/spark-1.5.2-bin-hadoop2.6/")
-
-Then run: 
 
 .libPaths(c(file.path(Sys.getenv("SPARK_HOME"), "R", "lib"), .libPaths()))
 
